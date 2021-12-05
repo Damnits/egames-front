@@ -1,0 +1,18 @@
+<table class="table" ngDefaultControl [(ngModel)]="produtos">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Nome</th>
+    <th scope="col">Descrição</th>
+    <th scope="col">Preço</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let items of produtos">
+  <tr>
+    <td>{{items.id}}</td>
+    <td>{{items.nome}}</td>
+    <td>{{items.descricao}}</td>
+    <td>{{items.preco}}</td>
+  </tr>
+  </tbody>
+</table>
