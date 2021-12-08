@@ -1,0 +1,27 @@
+<form [formGroup]="usuarioForm">
+  <div class="mb-3 col">
+    <input class="form-control" formControlName="nome" ngDefaultControl type="text" placeholder="Nome do usuario">
+    <small *ngIf="usuarioForm.controls.nome.invalid && usuarioForm.controls.nome.dirty" style="color: red">Nome requerido!</small>
+  </div>
+  <div class="mb-3 col">
+    <input class="form-control" formControlName="cpf" ngDefaultControl type="text" mask="000.000.000-00" placeholder="CPF do usuario">
+    <small *ngIf="usuarioForm.controls.cpf.invalid && usuarioForm.controls.cpf.dirty" style="color: red">CPF requerido!</small>
+  </div>
+  <div class="mb-3 col">
+    <input class="form-control" formControlName="email" ngDefaultControl type="email" placeholder="Email do usuario">
+    <small *ngIf="usuarioForm.controls.email.invalid && usuarioForm.controls.email.dirty" style="color: red">Email requerido ou inválido!</small>
+
+  </div>
+
+  <div class="mb-3 col">
+    <input class="form-control" formControlName="senha" ngDefaultControl type="password" placeholder="Senha do usuario">
+    <small *ngIf="usuarioForm.controls.senha.invalid && usuarioForm.controls.senha.dirty" style="color: red">Senha requerida e deve ser maior que 8 caracteres!</small>
+  </div>
+
+  <div class="mb-3">
+    <button type="button" (click)="onSubmit()" [disabled]="!usuarioForm.valid" class="btn btn-primary">Inserir usuário</button>
+  </div>
+  <a routerLink="/usuarios/listar" class="btn btn-link">Cancelar</a>
+
+</form>
+

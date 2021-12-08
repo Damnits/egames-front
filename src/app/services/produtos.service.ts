@@ -16,10 +16,14 @@ export class ProdutosService {
   inserir(produto: Produto): Observable<Produto> {
     return this.httpClient.post<Produto>(this.URL_PRODUTOS, produto);
   }
-  pesquisarPorId(id: number): Observable<Produto> {
+
+  pesquisarPorId(id: number | undefined): Observable<Produto> {
     return this.httpClient.get<Produto>(`${this.URL_PRODUTOS}/${id}`);
   }
   atualizar(produto: Produto): Observable<Produto> {
     return this.httpClient.put<Produto>(`${this.URL_PRODUTOS}/${produto.id}`, produto);
+  }
+  deletar(id: number | undefined): Observable<Produto>{
+    return this.httpClient.delete<Produto>(`${this.URL_PRODUTOS}/${id}`);
   }
 }

@@ -7,16 +7,26 @@
 
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" routerLink="produtos" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
           Produtos
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-        </div>
+        <ul class="dropdown-menu bg-dark">
+          <li><a class="dropdown-item" style="color: white" routerLink="produtos/adicionar">Adicionar</a></li>
+          <li><a class="dropdown-item" style="color: white" routerLink="produtos/listar">Listar</a></li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown01" role="button" data-toggle="dropdown" aria-expanded="false">
+          Usuários
+        </a>
+        <ul class="dropdown-menu bg-dark">
+          <li><a class="dropdown-item" style="color: white" routerLink="usuarios/cadastrar">Cadastrar</a></li>
+          <li><a class="dropdown-item" style="color: white" routerLink="usuarios/listar">Listar</a></li>
+        </ul>
       </li>
     </ul>
   </div>

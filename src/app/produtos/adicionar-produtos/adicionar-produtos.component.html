@@ -1,1 +1,21 @@
-<p>adicionar works!</p>
+<form [formGroup]="produtoForm">
+  <div class="mb-3 col">
+    <input class="form-control" formControlName="nome" ngDefaultControl type="text" placeholder="Nome do produto">
+    <small *ngIf="produtoForm.controls.nome.invalid && produtoForm.controls.nome.dirty" style="color: red">Nome requerido!</small>
+  </div>
+  <div class="mb-3 col">
+    <input class="form-control" formControlName="descricao" ngDefaultControl type="text" placeholder="Descrição do produto">
+    <small *ngIf="produtoForm.controls.descricao.invalid && produtoForm.controls.descricao.dirty" style="color: red">Descrição requerida!</small>
+
+  </div>
+  <div class="mb-3 col">
+    <input class="form-control" formControlName="preco" ngDefaultControl type="number" placeholder="Preço do produto">
+    <small *ngIf="produtoForm.controls.preco.invalid && produtoForm.controls.preco.dirty" style="color: red">Preço requerido!</small>
+  </div>
+  <div class="mb-3">
+    <button type="button" (click)="onSubmit()" [disabled]="!produtoForm.valid" class="btn btn-primary">Inserir produto</button>
+  </div>
+  <a routerLink="/produtos/listar" class="btn btn-link">Cancel</a>
+
+</form>
+

@@ -9,6 +9,10 @@ import { AdicionarProdutosComponent } from './produtos/adicionar-produtos/adicio
 import { ListarProdutosComponent } from './produtos/listar-produtos/listar-produtos.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { ListarUsuariosComponent } from './usuarios/listar-usuarios/listar-usuarios.component';
+import { CadastrarUsuariosComponent } from './usuarios/cadastrar-usuarios/cadastrar-usuarios.component';
+import { NgxMaskModule, IConfig } from 'ngx-mask'
 
 @NgModule({
   declarations: [
@@ -17,6 +21,9 @@ import {HttpClientModule} from "@angular/common/http";
     NavComponent,
     AdicionarProdutosComponent,
     ListarProdutosComponent,
+    UsuariosComponent,
+    ListarUsuariosComponent,
+    CadastrarUsuariosComponent,
 
   ],
     imports: [
@@ -24,7 +31,8 @@ import {HttpClientModule} from "@angular/common/http";
         AppRoutingModule,
         FormsModule,
         ReactiveFormsModule,
-        HttpClientModule
+        HttpClientModule,
+        NgxMaskModule.forRoot()
     ],
   providers: [],
   bootstrap: [AppComponent]
