@@ -1,17 +1,33 @@
 <form [formGroup]="produtoForm">
   <div class="mb-3 col">
-    <input class="form-control" formControlName="nome" ngDefaultControl type="text" placeholder="Nome do produto">
-    <small *ngIf="produtoForm.controls.nome.invalid && produtoForm.controls.nome.dirty" style="color: red">Nome requerido!</small>
+    <input class="form-control" formControlName="title" ngDefaultControl type="text" placeholder="Nome do produto">
+    <small *ngIf="produtoForm.controls.title.invalid && produtoForm.controls.title.dirty" style="color: red">Obrigatório!</small>
   </div>
   <div class="mb-3 col">
-    <input class="form-control" formControlName="descricao" ngDefaultControl type="text" placeholder="Descrição do produto">
-    <small *ngIf="produtoForm.controls.descricao.invalid && produtoForm.controls.descricao.dirty" style="color: red">Descrição requerida!</small>
+    <input class="form-control" formControlName="description" ngDefaultControl type="text" placeholder="Descrição do produto">
+    <small *ngIf="produtoForm.controls.description.invalid && produtoForm.controls.description.dirty" style="color: red">Obrigatório!</small>
+  </div>
+  <div class="mb-3 col">
+    <input class="form-control" formControlName="imageUrl" ngDefaultControl type="text"
+      placeholder="Url para imagem">
+    <small *ngIf="produtoForm.controls.imageUrl.invalid && produtoForm.controls.imageUrl.dirty"
+      style="color: red">Obrigatório!</small>
+  </div>
+  <div class="mb-3 col">
+    <input class="form-control" formControlName="costPrice" ngDefaultControl type="number" placeholder="Preço de custo">
+    <small *ngIf="produtoForm.controls.costPrice.invalid && produtoForm.controls.costPrice.dirty" style="color: red">Obrigatório!</small>
+  </div>
+  <div class="mb-3 col">
+    <input class="form-control" formControlName="sellPrice" ngDefaultControl type="number" placeholder="Preço de venda">
+    <small *ngIf="produtoForm.controls.sellPrice.invalid && produtoForm.controls.sellPrice.dirty" style="color: red">Obrigatório!</small>
+  </div>
+  <div class="mb-3 col">
+    <input class="form-control" formControlName="quantity" ngDefaultControl type="number"
+      placeholder="Quantidade">
+    <small *ngIf="produtoForm.controls.quantity.invalid && produtoForm.controls.quantity.dirty"
+      style="color: red">Obrigatório!</small>
+  </div>
 
-  </div>
-  <div class="mb-3 col">
-    <input class="form-control" formControlName="preco" ngDefaultControl type="number" placeholder="Preço do produto">
-    <small *ngIf="produtoForm.controls.preco.invalid && produtoForm.controls.preco.dirty" style="color: red">Preço requerido!</small>
-  </div>
   <div class="mb-3">
     <button type="button" (click)="onSubmit()" [disabled]="!produtoForm.valid" class="btn btn-primary">Inserir produto</button>
   </div>

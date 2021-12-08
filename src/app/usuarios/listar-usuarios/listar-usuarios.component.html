@@ -5,7 +5,7 @@
     <th scope="col">Nome</th>
     <th scope="col">CPF</th>
     <th scope="col">Email</th>
-    <th scope="col">Senha</th>
+    <th scope="col">Admin</th>
     <th>Editar</th>
     <th>Deletar</th>
   </tr>
@@ -13,10 +13,10 @@
   <tbody *ngFor="let items of usuarios">
   <tr>
     <td>{{items.id}}</td>
-    <td>{{items.nome}}</td>
+    <td>{{items.name}}</td>
     <td>{{items.cpf! | mask: '000.000.000-99'}}</td>
     <td>{{items.email}}</td>
-    <td type="password">{{items.senha}}</td>
+    <td>{{items.is_admin}}</td>
     <td>
       <button type="button" (click)="editar(items)" class="btn btn-success">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">

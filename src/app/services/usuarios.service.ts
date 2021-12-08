@@ -8,7 +8,7 @@ import {Usuario} from "../shared/models/usuario";
 })
 export class UsuariosService {
 
-  URL_USUARIOS = 'http://localhost:3000/usuarios';
+  URL_USUARIOS = 'http://localhost:3000/users';
 
   constructor(private httpClient: HttpClient) { }
   listar(): Observable<Usuario[]> {

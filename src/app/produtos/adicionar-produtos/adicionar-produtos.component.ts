@@ -24,9 +24,12 @@ export class AdicionarProdutosComponent implements OnInit {
 
 ) {
     this.produtoForm = this.fb.group({
-      nome: ["", [Validators.required]],
-      descricao: ["", [Validators.required]],
-      preco: ["", [Validators.required]]
+      title: ["", [Validators.required]],
+      description: ["", [Validators.required]],
+      costPrice: ["", [Validators.required]],
+      sellPrice: ["", [Validators.required]],
+      imageUrl: ["", [Validators.required]],
+      quantity: ["", [Validators.required]],
     })
   }
 

@@ -5,7 +5,7 @@ import {UsuariosService} from "../../services/usuarios.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {MustMatch} from "../../util/MustMatch.validator";
 import {first} from "rxjs/operators";
-import {GenericValidators} from "../../util/GenericValidators";
+// import {GenericValidators} from "../../util/GenericValidators";
 
 @Component({
   selector: 'app-cadastrar-usuarios',
@@ -27,10 +27,11 @@ export class CadastrarUsuariosComponent implements OnInit {
     private routeActive: ActivatedRoute
   ) {
     this.usuarioForm = this.fb.group({
-      nome: ["", [Validators.required]],
+      name: ["", [Validators.required]],
       cpf: ["", [Validators.required]],
       email: ["", [Validators.required, Validators.email]],
-      senha: ["", [Validators.minLength(8), Validators.required ]],
+      password: ["", [Validators.minLength(8), Validators.required ]],
+      is_admin: ["", [Validators.required]],
     })
   }
 
@@ -49,21 +50,29 @@ export class CadastrarUsuariosComponent implements OnInit {
       return;
     }
 
-    if(this.isAddMode){
-      this.cadastrarUsuario();
+    const form = this.usuarioForm.value;
+    const usuario: Usuario = this.usuarioForm.value;
+    if (form.is_admin == "Sim") {
+      usuario.is_admin = true;
     } else {
-      this.atualizarUsuario();
+      usuario.is_admin = false;
+    }
+
+    if(this.isAddMode){
+      this.cadastrarUsuario(usuario);
+    } else {
+      this.atualizarUsuario(usuario);
     }
   }
 
-  cadastrarUsuario(){
-    this.usuariosService.inserir(this.usuarioForm.value).subscribe(
+  cadastrarUsuario(obj: Usuario){
+    this.usuariosService.inserir(obj).subscribe(
       usuarioInserido => {
         this.roteador.navigate(['usuarios/listar'])
       }
     )
   }
-  atualizarUsuario(){
+  atualizarUsuario(obj: Usuario){
     const usuario: Usuario = this.usuarioForm.value;
     usuario.id = this.id;
     this.usuariosService.atualizar(usuario)
