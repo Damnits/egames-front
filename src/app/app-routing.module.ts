@@ -6,11 +6,18 @@ import {ListarUsuariosComponent} from "./usuarios/listar-usuarios/listar-usuario
 import {CadastrarUsuariosComponent} from "./usuarios/cadastrar-usuarios/cadastrar-usuarios.component";
 import {ProdutosComponent} from "./produtos/produtos.component";
 import {UsuariosComponent} from "./usuarios/usuarios.component";
+import {AppAuthButtonComponent} from "./auth/app-auth-button/app-auth-button.component";
+import {AuthGuard} from "@auth0/auth0-angular";
 
 const routes: Routes = [
   {
+    path: '',
+    component: AppAuthButtonComponent
+  },
+  {
     path: 'produtos',
     component: ProdutosComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'adicionar',
@@ -29,6 +36,7 @@ const routes: Routes = [
   {
     path:'usuarios',
     component: UsuariosComponent,
+    canActivate: [AuthGuard],
     children:[
       {
         path: 'cadastrar',
