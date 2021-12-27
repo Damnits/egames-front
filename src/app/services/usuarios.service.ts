@@ -8,6 +8,7 @@ import {Usuario} from "../shared/models/usuario";
 })
 export class UsuariosService {
 
+  // URL_USUARIOS = 'https://railsegame.herokuapp.com/users';
   URL_USUARIOS = 'http://localhost:3000/users';
 
   constructor(private httpClient: HttpClient) { }

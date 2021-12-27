@@ -7,6 +7,7 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class ProdutosService {
+  // URL_PRODUTOS = 'https://railsegame.herokuapp.com/products';
   URL_PRODUTOS = 'http://localhost:3000/products';
 
   constructor(private httpClient: HttpClient) { }
@@ -25,7 +26,7 @@ export class ProdutosService {
   atualizar(produto: Produto): Observable<Produto> {
     return this.httpClient.put<Produto>(`${this.URL_PRODUTOS}/${produto.id}`, produto);
   }
-  
+
   deletar(id: number | undefined): Observable<Produto>{
     return this.httpClient.delete<Produto>(`${this.URL_PRODUTOS}/${id}`);
   }
