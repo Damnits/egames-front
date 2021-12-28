@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Produto} from "../../shared/models/produto";
-import {ProdutosService} from "../../services/produtos.service";
+import {Produto} from "../../../shared/models/produto";
+import {ProdutosService} from "../../../shared/services/produtos.service";
 import {Router} from "@angular/router";
 import {first} from "rxjs/operators";
 

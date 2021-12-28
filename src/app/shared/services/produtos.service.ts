@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Produto} from "../shared/models/produto";
+import {Produto} from "../models/produto";
 import {Observable} from "rxjs";
 import {HttpClient} from '@angular/common/http';
 
@@ -7,8 +7,8 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class ProdutosService {
-  // URL_PRODUTOS = 'https://railsegame.herokuapp.com/products';
-  URL_PRODUTOS = 'http://localhost:3000/products';
+  URL_PRODUTOS = 'https://railsegame.herokuapp.com/products';
+  // URL_PRODUTOS = 'http://localhost:3000/products';
 
   constructor(private httpClient: HttpClient) { }
   listar(): Observable<Produto[]> {

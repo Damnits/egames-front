@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Produto} from "../../shared/models/produto";
+import {Produto} from "../../../shared/models/produto";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {ProdutosService} from "../../services/produtos.service";
+import {ProdutosService} from "../../../shared/services/produtos.service";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({

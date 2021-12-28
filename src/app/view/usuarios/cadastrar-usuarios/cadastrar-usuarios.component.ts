@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Usuario} from "../../shared/models/usuario";
+import {Usuario} from "../../../shared/models/usuario";
 import {AbstractControlOptions, FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {UsuariosService} from "../../services/usuarios.service";
+import {UsuariosService} from "../../../shared/services/usuarios.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {MustMatch} from "../../util/MustMatch.validator";
+import {MustMatch} from "../../../util/MustMatch.validator";
 import {first} from "rxjs/operators";
 // import {GenericValidators} from "../../util/GenericValidators";
 

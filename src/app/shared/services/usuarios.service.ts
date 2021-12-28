@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Usuario} from "../shared/models/usuario";
+import {Usuario} from "../models/usuario";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuariosService {
 
-  // URL_USUARIOS = 'https://railsegame.herokuapp.com/users';
-  URL_USUARIOS = 'http://localhost:3000/users';
+  URL_USUARIOS = 'https://railsegame.herokuapp.com/users';
+  // URL_USUARIOS = 'http://localhost:3000/users';
 
   constructor(private httpClient: HttpClient) { }
   listar(): Observable<Usuario[]> {
