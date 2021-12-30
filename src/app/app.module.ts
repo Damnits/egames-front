@@ -13,8 +13,6 @@ import { UsuariosComponent } from './view/usuarios/usuarios.component';
 import { ListarUsuariosComponent } from './view/usuarios/listar-usuarios/listar-usuarios.component';
 import { CadastrarUsuariosComponent } from './view/usuarios/cadastrar-usuarios/cadastrar-usuarios.component';
 import { NgxMaskModule, IConfig } from 'ngx-mask'
-import { AuthModule } from '@auth0/auth0-angular';
-import { AppAuthButtonComponent } from './auth/app-auth-button/app-auth-button.component';
 import { LoginComponent } from './view/login/login.component';
 
 @NgModule({
@@ -27,7 +25,6 @@ import { LoginComponent } from './view/login/login.component';
     UsuariosComponent,
     ListarUsuariosComponent,
     CadastrarUsuariosComponent,
-    AppAuthButtonComponent,
     LoginComponent,
 
   ],
@@ -38,10 +35,6 @@ import { LoginComponent } from './view/login/login.component';
         ReactiveFormsModule,
         HttpClientModule,
         NgxMaskModule.forRoot(),
-        AuthModule.forRoot({
-          domain: "dev-feczwkc9.us.auth0.com",
-          clientId: "Y36HoI9oWOu6IkYXbRXzNhpSkFAwiObQ"
-        }),
     ],
   providers: [],
   bootstrap: [AppComponent]

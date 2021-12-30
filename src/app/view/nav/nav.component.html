@@ -30,10 +30,10 @@
       </li>
     </ul>
       <ng-container >
-      <a  class="nav-item" class="navbar-brand" (click)="auth.logout({returnTo: document.location.origin})" href="#">Logout</a>
+      <a  class="nav-item" class="navbar-brand" href="#">Logout</a>
       </ng-container>
       <ng-template #loggedOut>
-        <a  class="navbar-brand"(click)="auth.loginWithRedirect()" href="#">Log in</a>
+        <a  class="navbar-brand" href="#">Log in</a>
       </ng-template>
   </div>
 </nav>

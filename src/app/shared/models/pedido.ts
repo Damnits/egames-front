@@ -2,8 +2,8 @@ export class Pedido {
   id?: number;
   number?: number;
   date?: string;
-  clienteId?: string;
-  productId?: number;
+  clientId?: string;
+  productId?: string;
   quantity?: number;
   status?: number;
 }

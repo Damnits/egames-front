@@ -6,7 +6,6 @@ import {ListarUsuariosComponent} from "./view/usuarios/listar-usuarios/listar-us
 import {CadastrarUsuariosComponent} from "./view/usuarios/cadastrar-usuarios/cadastrar-usuarios.component";
 import {ProdutosComponent} from "./view/produtos/produtos.component";
 import {UsuariosComponent} from "./view/usuarios/usuarios.component";
-import {AppAuthButtonComponent} from "./auth/app-auth-button/app-auth-button.component";
 // import {AuthGuard} from "@auth0/auth0-angular";
 import { LoginComponent } from './view/login/login.component';
 import { AuthGuard } from './shared/guards/auth.guard';
